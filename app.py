@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-pickle_in = open("decision_model.pkl","rb")
-model=pickle.load(pickle_in)
+model = pickle.load(open('decision_model.pkl','rb'))   
 dataset= pd.read_csv('Social_Network_Ads.csv')
 X = dataset.iloc[:, [2, 3]].values
 from sklearn.preprocessing import StandardScaler
@@ -46,7 +45,7 @@ def main():
       result=predict_note_authentication(UserID, Gender,Age,EstimatedSalary)
       st.success('Model has predicted {}'.format(result))
     if st.button("About"):
-      st.subheader("Developed by Deepak Moud")
+      st.subheader("Developed by Anmol Ojha")
       st.subheader("Head , Department of Computer Engineering")
 
 if __name__=='__main__':
